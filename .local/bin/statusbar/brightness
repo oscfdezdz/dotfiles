@@ -1,0 +1,7 @@
+#!/bin/sh
+
+brigstat="$(xbacklight -get)"
+
+brig=$(echo "$brigstat" | grep -o "\[[0-9]\+.\]" | sed 's/[^0-9]*//g')
+
+notify-send "Brillo" "$brig"

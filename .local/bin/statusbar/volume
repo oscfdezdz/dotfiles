@@ -1,0 +1,17 @@
+#!/bin/sh
+
+volstat=$(amixer get Master) 
+
+echo "$volstat" | grep "\[off\]" >/dev/null && notify-send " Silencio" && exit
+
+vol=$(echo "$volstat" | grep -o "\[[0-9]\+%\]" | sed 's/[^0-9]*//g')
+
+if [ "$vol" -gt "70" ]; then
+	icon=""
+elif [ "$vol" -lt "30" ]; then
+	icon=""
+else
+	icon=""
+fi
+
+notify-send "$icon Volumen" "$vol"
