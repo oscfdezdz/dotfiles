@@ -8,6 +8,7 @@ call plug#end()
 
 colorscheme nord
 
+set expandtab
 set number relativenumber
 
 map <C-n> :NERDTreeToggle<CR>
