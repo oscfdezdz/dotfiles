@@ -1,0 +1,4 @@
+#! /bin/sh
+
+screen -d -m -S uart_con /dev/ttyUSB0 115200
+screen -S uart_con -X exec \!\! sz -X $1

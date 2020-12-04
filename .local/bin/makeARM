@@ -1,0 +1,7 @@
+#! /bin/sh
+filename=$(basename $1 .s)
+directory=$(pwd)
+cd $directory
+arm-none-eabi-as -o $filename.o $filename.s
+arm-none-eabi-ld -e 0 -Ttext=0x8000 -o $filename.elf $filename.o
+arm-none-eabi-objcopy $filename.elf -O binary $filename.img
