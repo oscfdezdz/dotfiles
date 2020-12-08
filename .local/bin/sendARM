@@ -1,4 +1,7 @@
 #! /bin/sh
 
+# Permanent permissions' solution: sudo usermod -a -G dialout oscar
+# Temporary permissions' solution: chmod 666 /dev/ttyUSB0
+
 screen -d -m -S uart_con /dev/ttyUSB0 115200
 screen -S uart_con -X exec \!\! sz -X $1
