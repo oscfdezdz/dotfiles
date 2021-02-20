@@ -1,14 +1,16 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
+" Utilities
 Plug 'preservim/nerdtree'
 Plug 'bling/vim-airline'
 
+" Programming
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
-colorscheme nord
-
 set expandtab
-set number relativenumber
+set number
+set smarttab
 
 map <C-n> :NERDTreeToggle<CR>
