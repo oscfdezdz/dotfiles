@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-[ ! -z "$1" ] && cp "$1" ~/Imágenes/Wallpapers/wall.png && dunst -i "$HOME/Imágenes/Wallpapers/wall.png" "Wallpaper changed."
